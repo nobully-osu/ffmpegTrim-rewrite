@@ -17,7 +17,7 @@ def main() -> None:
     preset = config.get("main", "preset")
     file_extension = config.get("main", "extension")
 
-    print("ffmpegTrim-rewrite v1.0.0")
+    print("ffmpegTrim-rewrite v1.0.1")
 
     input_path = input("Path to video (or drag and drop): ")
     start_time = input("Start time of clip (mm:ss): ")
@@ -52,7 +52,7 @@ def setup():
     print("Installing ffmpeg via winget...\n")
     subprocess.run(["winget", "install", "Gyan.FFmpeg"])
     print("Installing python libraries via pip...\n")
-    subprocess.run(["pip", "install", "ffmpeg-python", "configparser"])
+    subprocess.run(["pip", "install", "configparser"])
 
     print("Generating configuration file...")
     config = ConfigParser()
