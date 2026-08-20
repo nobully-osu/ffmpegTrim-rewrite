@@ -17,11 +17,11 @@ def main() -> None:
     preset = config.get("main", "preset")
     file_extension = config.get("main", "extension")
 
-    print("ffmpegTrim-rewrite v1.0.1")
+    print("ffmpegTrim-rewrite v1.0.2")
 
     input_path = input("Path to video (or drag and drop): ")
-    start_time = input("Start time of clip (mm:ss): ")
-    end_time = input("End time of clip (mm:ss): ")
+    start_time = input("Start time of clip (hh:mm:ss, mm:ss): ")
+    end_time = input("End time of clip (hh:mm:ss, mm:ss): ")
 
     input_path = input_path.strip('\"\'')
     temp_path, _ = input_path.strip('\"\'').split(".", 1)
