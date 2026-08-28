@@ -249,3 +249,84 @@ QPlainTextEdit::selection {
     background-color: #000080;
     color: #ffffff;
 }
+
+/* ---------------------------------------------------------
+   Menu Bar
+   --------------------------------------------------------- */
+
+QMenuBar {
+    background-color: #c0c0c0;
+    color: #000000;
+
+    border: 0px;
+    border-bottom: 1px solid #808080;
+
+    border-radius: 0px;
+}
+
+QMenuBar::item {
+    background-color: transparent;
+
+    padding: 3px 7px;
+
+    border: 0px;
+    border-radius: 0px;
+}
+
+QMenuBar::item:selected {
+    background-color: #000080;
+    color: #ffffff;
+
+    border-radius: 0px;
+}
+
+QMenuBar::item:pressed {
+    background-color: #000080;
+    color: #ffffff;
+
+    border-radius: 0px;
+}
+
+
+/* ---------------------------------------------------------
+   Menus
+   --------------------------------------------------------- */
+
+QMenu {
+    background-color: #c0c0c0;
+    color: #000000;
+
+    border-top: 2px solid #ffffff;
+    border-left: 2px solid #ffffff;
+    border-right: 2px solid #404040;
+    border-bottom: 2px solid #404040;
+
+    border-radius: 0px;
+
+    padding: 2px;
+}
+
+QMenu::item {
+    background-color: transparent;
+
+    padding: 4px 24px 4px 8px;
+
+    border-radius: 0px;
+}
+
+QMenu::item:selected {
+    background-color: #000080;
+    color: #ffffff;
+
+    border-radius: 0px;
+}
+
+QMenu::separator {
+    height: 1px;
+
+    background-color: #808080;
+
+    margin: 3px 2px;
+
+    border-radius: 0px;
+}
