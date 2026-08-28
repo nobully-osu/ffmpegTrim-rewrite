@@ -1,5 +1,7 @@
 import os, subprocess
 from configparser import ConfigParser
+from pathlib import Path
+
 
 def main() -> None:
     script_path = os.path.dirname(os.path.realpath(__file__))
@@ -26,10 +28,7 @@ def main() -> None:
     input_path = input_path.strip('\"\'')
     temp_path, _ = input_path.strip('\"\'').split(".", 1)
 
-    i = 0
-    while os.path.exists(
-            (output_path := f"{temp_path}_Trim{'' if i == 0 else i}.{file_extension}")
-    ): i += 1
+    output_path = get_output_path(temp_path, file_extension)
 
     start_time_seconds = parse_timecode(start_time)
     end_time_seconds = parse_timecode(end_time)
@@ -46,13 +45,21 @@ def main() -> None:
         "-c:a", audio_codec,
         output_path
     ])
+
     return
+
+def get_output_path(temp_path: str, file_extension: str) -> str:
+    i = 0
+    while os.path.exists(
+            (output_path := f"{temp_path}_Trim{'' if i == 0 else i}.{file_extension}")
+    ): i += 1
+    return output_path
 
 def setup():
     print("Installing ffmpeg via winget...\n")
     subprocess.run(["winget", "install", "Gyan.FFmpeg"])
-    print("Installing python libraries via pip...\n")
-    subprocess.run(["pip", "install", "configparser"])
+    print("Installing requirements.txt...\n")
+    subprocess.run(["pip", "install", "-r", "requirements.txt"])
 
     print("Generating configuration file...")
     config = ConfigParser()
@@ -63,6 +70,7 @@ def setup():
     config.set("main", "video", "libx264")
     config.set("main", "preset", "medium")
     config.set("main", "extension", "mp4")
+    config.set("main", "default-path", str(Path.home() / "Videos"))
 
     with open("config.ini", "w") as f:
         config.write(f)

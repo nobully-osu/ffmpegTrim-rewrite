@@ -1,0 +1,251 @@
+/* =========================================================
+   Windows 9x inspired theme
+   ========================================================= */
+
+QWidget {
+    background-color: #c0c0c0;
+    color: #000000;
+
+    font-family: "MS Sans Serif", "Tahoma", sans-serif;
+    font-size: 9pt;
+}
+
+
+/* ---------------------------------------------------------
+   Labels
+   --------------------------------------------------------- */
+
+QLabel {
+    background-color: transparent;
+    color: #000000;
+}
+
+
+/* ---------------------------------------------------------
+   Menu Bar
+   --------------------------------------------------------- */
+
+QMenuBar {
+    background-color: #c0c0c0;
+    color: #000000;
+
+    border-bottom: 1px solid #808080;
+}
+
+QMenuBar::item {
+    background-color: transparent;
+
+    padding: 3px 7px;
+}
+
+QMenuBar::item:selected {
+    background-color: #000080;
+    color: #ffffff;
+}
+
+QMenuBar::item:pressed {
+    background-color: #000080;
+    color: #ffffff;
+}
+
+
+/* ---------------------------------------------------------
+   Menus
+   --------------------------------------------------------- */
+
+QMenu {
+    background-color: #c0c0c0;
+    color: #000000;
+
+    border-top: 2px solid #ffffff;
+    border-left: 2px solid #ffffff;
+    border-right: 2px solid #404040;
+    border-bottom: 2px solid #404040;
+
+    padding: 2px;
+}
+
+QMenu::item {
+    background-color: transparent;
+
+    padding: 4px 24px 4px 8px;
+}
+
+QMenu::item:selected {
+    background-color: #000080;
+    color: #ffffff;
+}
+
+QMenu::separator {
+    height: 1px;
+
+    background-color: #808080;
+
+    margin: 3px 2px;
+}
+
+
+/* ---------------------------------------------------------
+   Text fields
+   --------------------------------------------------------- */
+
+QLineEdit {
+    background-color: #ffffff;
+    color: #000000;
+
+    border-top: 2px solid #808080;
+    border-left: 2px solid #808080;
+    border-right: 2px solid #ffffff;
+    border-bottom: 2px solid #ffffff;
+
+    padding: 2px;
+}
+
+QLineEdit:focus {
+    border-top: 2px solid #000080;
+    border-left: 2px solid #000080;
+    border-right: 2px solid #ffffff;
+    border-bottom: 2px solid #ffffff;
+}
+
+QLineEdit::selection {
+    background-color: #000080;
+    color: #ffffff;
+}
+
+
+/* ---------------------------------------------------------
+   Buttons
+   --------------------------------------------------------- */
+
+QPushButton {
+    background-color: #c0c0c0;
+    color: #000000;
+
+    border-top: 2px solid #ffffff;
+    border-left: 2px solid #ffffff;
+    border-right: 2px solid #404040;
+    border-bottom: 2px solid #404040;
+
+    padding: 3px 10px;
+    min-height: 18px;
+}
+
+
+/* Hover - noticeably lighter */
+
+QPushButton:hover {
+    background-color: #d8d8d8;
+
+    border-top: 2px solid #ffffff;
+    border-left: 2px solid #ffffff;
+    border-right: 2px solid #202020;
+    border-bottom: 2px solid #202020;
+}
+
+
+/* Pressed - inverted bevel */
+
+QPushButton:pressed {
+    background-color: #a8a8a8;
+
+    border-top: 2px solid #404040;
+    border-left: 2px solid #404040;
+    border-right: 2px solid #ffffff;
+    border-bottom: 2px solid #ffffff;
+}
+
+
+/* Keyboard focus */
+
+QPushButton:focus {
+    outline: none;
+}
+
+
+/* ---------------------------------------------------------
+   Start button
+   --------------------------------------------------------- */
+
+QPushButton#startButton {
+    background-color: #90ee90;
+    color: #000000;
+
+    font-weight: bold;
+
+    border-top: 2px solid #ffffff;
+    border-left: 2px solid #ffffff;
+    border-right: 2px solid #404040;
+    border-bottom: 2px solid #404040;
+
+    padding: 3px 12px;
+}
+
+
+/* Start hover */
+
+QPushButton#startButton:hover {
+    background-color: #b0f5b0;
+
+    border-top: 2px solid #ffffff;
+    border-left: 2px solid #ffffff;
+    border-right: 2px solid #202020;
+    border-bottom: 2px solid #202020;
+}
+
+
+/* Start pressed */
+
+QPushButton#startButton:pressed {
+    background-color: #70c870;
+
+    border-top: 2px solid #404040;
+    border-left: 2px solid #404040;
+    border-right: 2px solid #ffffff;
+    border-bottom: 2px solid #ffffff;
+}
+
+
+/* ---------------------------------------------------------
+   Progress bar
+   --------------------------------------------------------- */
+
+QProgressBar {
+    background-color: #ffffff;
+    color: #000000;
+
+    border-top: 2px solid #808080;
+    border-left: 2px solid #808080;
+    border-right: 2px solid #ffffff;
+    border-bottom: 2px solid #ffffff;
+
+    text-align: center;
+    min-height: 18px;
+}
+
+QProgressBar::chunk {
+    background-color: #000080;
+}
+
+
+/* ---------------------------------------------------------
+   Console
+   --------------------------------------------------------- */
+
+QPlainTextEdit {
+    background-color: #000000;
+    color: #c0c0c0;
+
+    border: 2px inset #c0c0c0;
+    border-radius: 0px;
+
+    padding: 6px;
+
+    font-family: "Courier New", monospace;
+    font-size: 12px;
+}
+
+QPlainTextEdit::selection {
+    background-color: #000080;
+    color: #ffffff;
+}

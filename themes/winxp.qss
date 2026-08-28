@@ -1,0 +1,389 @@
+/* =========================================================
+   Windows XP / Luna inspired theme
+   ffmpegTrimQt
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   Global
+   --------------------------------------------------------- */
+
+QWidget {
+    background-color: #ece9d8;
+    color: #000000;
+
+    font-family: "Tahoma", "MS Sans Serif", sans-serif;
+    font-size: 9pt;
+}
+
+QMainWindow {
+    background-color: #ece9d8;
+}
+
+
+/* ---------------------------------------------------------
+   Menu Bar
+   --------------------------------------------------------- */
+
+QMenuBar {
+    background-color: #ece9d8;
+    color: #000000;
+
+    border-bottom: 1px solid #aca899;
+}
+
+QMenuBar::item {
+    background-color: transparent;
+
+    padding: 4px 8px;
+}
+
+QMenuBar::item:selected {
+    background-color: #316ac5;
+    color: #ffffff;
+}
+
+
+/* ---------------------------------------------------------
+   Menus
+   --------------------------------------------------------- */
+
+QMenu {
+    background-color: #ffffff;
+    color: #000000;
+
+    border: 1px solid #aca899;
+    padding: 2px;
+}
+
+QMenu::item {
+    padding: 4px 24px 4px 8px;
+}
+
+QMenu::item:selected {
+    background-color: #316ac5;
+    color: #ffffff;
+}
+
+QMenu::separator {
+    height: 1px;
+    background-color: #aca899;
+
+    margin: 3px 4px;
+}
+
+
+/* ---------------------------------------------------------
+   Labels
+   --------------------------------------------------------- */
+
+QLabel {
+    background-color: transparent;
+    color: #000000;
+}
+
+
+/* ---------------------------------------------------------
+   Line Edits
+   --------------------------------------------------------- */
+
+QLineEdit {
+    background-color: #ffffff;
+    color: #000000;
+
+    border-top: 1px solid #808080;
+    border-left: 1px solid #808080;
+    border-right: 1px solid #ffffff;
+    border-bottom: 1px solid #ffffff;
+
+    padding: 3px 4px;
+}
+
+QLineEdit:focus {
+    border: 1px solid #316ac5;
+}
+
+QLineEdit::placeholder {
+    color: #808080;
+}
+
+
+/* ---------------------------------------------------------
+   Standard Buttons
+   --------------------------------------------------------- */
+
+QPushButton {
+    color: #000000;
+
+    min-height: 20px;
+    padding: 3px 12px;
+
+    border-top: 1px solid #ffffff;
+    border-left: 1px solid #ffffff;
+    border-right: 1px solid #808080;
+    border-bottom: 1px solid #808080;
+
+    border-radius: 3px;
+
+    background-color: #ece9d8;
+
+    background: qlineargradient(
+        x1: 0, y1: 0,
+        x2: 0, y2: 1,
+
+        stop: 0 #ffffff,
+        stop: 0.45 #f4f2e8,
+        stop: 0.50 #e5e2d2,
+        stop: 1 #d6d2c2
+    );
+}
+
+QPushButton:hover {
+    border-top-color: #ffffff;
+    border-left-color: #ffffff;
+    border-right-color: #316ac5;
+    border-bottom-color: #316ac5;
+
+    background: qlineargradient(
+        x1: 0, y1: 0,
+        x2: 0, y2: 1,
+
+        stop: 0 #ffffff,
+        stop: 0.45 #fffbe6,
+        stop: 0.50 #e9f0ff,
+        stop: 1 #c6d8f5
+    );
+}
+
+QPushButton:pressed {
+    border-top-color: #808080;
+    border-left-color: #808080;
+    border-right-color: #ffffff;
+    border-bottom-color: #ffffff;
+
+    background: qlineargradient(
+        x1: 0, y1: 0,
+        x2: 0, y2: 1,
+
+        stop: 0 #d6d2c2,
+        stop: 0.50 #e5e2d2,
+        stop: 1 #ffffff
+    );
+}
+
+QPushButton:disabled {
+    color: #808080;
+
+    background: #ece9d8;
+
+    border-top-color: #ffffff;
+    border-left-color: #ffffff;
+    border-right-color: #aca899;
+    border-bottom-color: #aca899;
+}
+
+
+/* ---------------------------------------------------------
+   Start Button
+   --------------------------------------------------------- */
+
+QPushButton#startButton {
+    color: #ffffff;
+    font-weight: bold;
+
+    border-top: 1px solid #b9d6f8;
+    border-left: 1px solid #b9d6f8;
+    border-right: 1px solid #003c8f;
+    border-bottom: 1px solid #003c8f;
+
+    background: qlineargradient(
+        x1: 0, y1: 0,
+        x2: 0, y2: 1,
+
+        stop: 0 #6fa8f5,
+        stop: 0.45 #3f83df,
+        stop: 0.50 #2f73d0,
+        stop: 1 #1657a8
+    );
+}
+
+QPushButton#startButton:hover {
+    background: qlineargradient(
+        x1: 0, y1: 0,
+        x2: 0, y2: 1,
+
+        stop: 0 #8fc0ff,
+        stop: 0.45 #5a99ec,
+        stop: 0.50 #4086df,
+        stop: 1 #1f64b8
+    );
+}
+
+QPushButton#startButton:pressed {
+    border-top-color: #003c8f;
+    border-left-color: #003c8f;
+    border-right-color: #b9d6f8;
+    border-bottom-color: #b9d6f8;
+
+    background: qlineargradient(
+        x1: 0, y1: 0,
+        x2: 0, y2: 1,
+
+        stop: 0 #1657a8,
+        stop: 0.50 #2f73d0,
+        stop: 1 #6fa8f5
+    );
+}
+
+
+/* ---------------------------------------------------------
+   Progress Bar
+   --------------------------------------------------------- */
+
+QProgressBar {
+    background-color: #ffffff;
+    color: #000000;
+
+    border-top: 1px solid #808080;
+    border-left: 1px solid #808080;
+    border-right: 1px solid #ffffff;
+    border-bottom: 1px solid #ffffff;
+
+    text-align: center;
+
+    min-height: 18px;
+}
+
+QProgressBar::chunk {
+    background: qlineargradient(
+        x1: 0, y1: 0,
+        x2: 0, y2: 1,
+
+        stop: 0 #6fa8f5,
+        stop: 0.45 #3f83df,
+        stop: 0.50 #2f73d0,
+        stop: 1 #1657a8
+    );
+}
+
+
+/* ---------------------------------------------------------
+   Console / ffmpeg Output
+   --------------------------------------------------------- */
+
+QPlainTextEdit {
+    background-color: #000000;
+    color: #c0c0c0;
+
+    border-top: 2px solid #808080;
+    border-left: 2px solid #808080;
+    border-right: 2px solid #ffffff;
+    border-bottom: 2px solid #ffffff;
+
+    border-radius: 0px;
+
+    padding: 6px;
+
+    font-family: "Courier New", "Consolas", monospace;
+    font-size: 12px;
+
+    selection-background-color: #316ac5;
+    selection-color: #ffffff;
+}
+
+
+/* ---------------------------------------------------------
+   Scrollbars
+   --------------------------------------------------------- */
+
+QScrollBar:vertical {
+    background-color: #ece9d8;
+
+    width: 16px;
+
+    border: 1px solid #aca899;
+}
+
+QScrollBar::handle:vertical {
+    background: qlineargradient(
+        x1: 0, y1: 0,
+        x2: 1, y2: 0,
+
+        stop: 0 #f4f2e8,
+        stop: 0.5 #d6d2c2,
+        stop: 1 #b8b4a8
+    );
+
+    border-top: 1px solid #ffffff;
+    border-left: 1px solid #ffffff;
+    border-right: 1px solid #808080;
+    border-bottom: 1px solid #808080;
+
+    min-height: 20px;
+}
+
+QScrollBar::handle:vertical:hover {
+    background: #dce9fa;
+}
+
+QScrollBar::add-line:vertical,
+QScrollBar::sub-line:vertical {
+    background-color: #ece9d8;
+
+    border: 1px solid #aca899;
+
+    height: 15px;
+}
+
+QScrollBar:horizontal {
+    background-color: #ece9d8;
+
+    height: 16px;
+
+    border: 1px solid #aca899;
+}
+
+QScrollBar::handle:horizontal {
+    background: qlineargradient(
+        x1: 0, y1: 0,
+        x2: 0, y2: 1,
+
+        stop: 0 #f4f2e8,
+        stop: 0.5 #d6d2c2,
+        stop: 1 #b8b4a8
+    );
+
+    border-top: 1px solid #ffffff;
+    border-left: 1px solid #ffffff;
+    border-right: 1px solid #808080;
+    border-bottom: 1px solid #808080;
+
+    min-width: 20px;
+}
+
+QScrollBar::handle:horizontal:hover {
+    background: #dce9fa;
+}
+
+QScrollBar::add-line:horizontal,
+QScrollBar::sub-line:horizontal {
+    background-color: #ece9d8;
+
+    border: 1px solid #aca899;
+
+    width: 15px;
+}
+
+
+/* ---------------------------------------------------------
+   Tooltips
+   --------------------------------------------------------- */
+
+QToolTip {
+    background-color: #ffffe1;
+    color: #000000;
+
+    border: 1px solid #808080;
+
+    padding: 3px;
+}

@@ -1,0 +1,281 @@
+/* =========================================================
+   Catppuccin Mocha — Lavender
+   ffmpegTrimQt theme
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   Global
+   --------------------------------------------------------- */
+
+QWidget {
+    background-color: #1e1e2e;
+    color: #cdd6f4;
+
+    font-family: "Segoe UI", "Noto Sans", sans-serif;
+    font-size: 9pt;
+}
+
+
+/* ---------------------------------------------------------
+   Main Window
+   --------------------------------------------------------- */
+
+QMainWindow {
+    background-color: #1e1e2e;
+}
+
+
+/* ---------------------------------------------------------
+   Menu Bar
+   --------------------------------------------------------- */
+
+QMenuBar {
+    background-color: #181825;
+    color: #cdd6f4;
+
+    border-bottom: 1px solid #313244;
+}
+
+QMenuBar::item {
+    background-color: transparent;
+    padding: 4px 8px;
+}
+
+QMenuBar::item:selected {
+    background-color: #313244;
+    color: #b4befe;
+}
+
+
+/* ---------------------------------------------------------
+   Menus
+   --------------------------------------------------------- */
+
+QMenu {
+    background-color: #181825;
+    color: #cdd6f4;
+
+    border: 1px solid #45475a;
+    padding: 4px;
+}
+
+QMenu::item {
+    padding: 5px 24px 5px 8px;
+}
+
+QMenu::item:selected {
+    background-color: #313244;
+    color: #b4befe;
+}
+
+QMenu::separator {
+    height: 1px;
+    background-color: #313244;
+    margin: 4px 8px;
+}
+
+
+/* ---------------------------------------------------------
+   Labels
+   --------------------------------------------------------- */
+
+QLabel {
+    background-color: transparent;
+    color: #cdd6f4;
+}
+
+
+/* ---------------------------------------------------------
+   Line Edits
+   --------------------------------------------------------- */
+
+QLineEdit {
+    background-color: #181825;
+    color: #cdd6f4;
+
+    border: 1px solid #45475a;
+    border-radius: 4px;
+
+    padding: 4px 6px;
+}
+
+QLineEdit:focus {
+    border: 1px solid #b4befe;
+}
+
+QLineEdit::placeholder {
+    color: #6c7086;
+}
+
+
+/* ---------------------------------------------------------
+   Buttons
+   --------------------------------------------------------- */
+
+QPushButton {
+    background-color: #313244;
+    color: #cdd6f4;
+
+    border: 1px solid #45475a;
+    border-radius: 4px;
+
+    padding: 4px 12px;
+}
+
+QPushButton:hover {
+    background-color: #45475a;
+    border-color: #6c7086;
+}
+
+QPushButton:pressed {
+    background-color: #181825;
+    border-color: #b4befe;
+}
+
+QPushButton:disabled {
+    background-color: #181825;
+    color: #6c7086;
+    border-color: #313244;
+}
+
+
+/* ---------------------------------------------------------
+   Start Button
+   --------------------------------------------------------- */
+
+QPushButton#startButton {
+    background-color: #b4befe;
+    color: #1e1e2e;
+
+    border: 1px solid #b4befe;
+    font-weight: bold;
+}
+
+QPushButton#startButton:hover {
+    background-color: #c6d0ff;
+    border-color: #c6d0ff;
+}
+
+QPushButton#startButton:pressed {
+    background-color: #9aa7e8;
+    border-color: #9aa7e8;
+}
+
+
+/* ---------------------------------------------------------
+   Progress Bar
+   --------------------------------------------------------- */
+
+QProgressBar {
+    background-color: #181825;
+    color: #cdd6f4;
+
+    border: 1px solid #45475a;
+    border-radius: 4px;
+
+    text-align: center;
+    min-height: 18px;
+}
+
+QProgressBar::chunk {
+    background-color: #b4befe;
+    border-radius: 3px;
+}
+
+
+/* ---------------------------------------------------------
+   Console / ffmpeg Output
+   --------------------------------------------------------- */
+
+QPlainTextEdit {
+    background-color: #11111b;
+    color: #cdd6f4;
+
+    border: 1px solid #313244;
+    border-radius: 4px;
+
+    padding: 6px;
+
+    font-family: "Courier New", "Consolas", monospace;
+    font-size: 12px;
+}
+
+
+/* ---------------------------------------------------------
+   Console Scrollbar
+   --------------------------------------------------------- */
+
+QPlainTextEdit QScrollBar:vertical {
+    background-color: #181825;
+    width: 14px;
+
+    border: none;
+}
+
+QPlainTextEdit QScrollBar::handle:vertical {
+    background-color: #45475a;
+
+    border-radius: 4px;
+    min-height: 20px;
+}
+
+QPlainTextEdit QScrollBar::handle:vertical:hover {
+    background-color: #6c7086;
+}
+
+QPlainTextEdit QScrollBar::add-line:vertical,
+QPlainTextEdit QScrollBar::sub-line:vertical {
+    height: 0px;
+}
+
+QPlainTextEdit QScrollBar:horizontal {
+    background-color: #181825;
+    height: 14px;
+
+    border: none;
+}
+
+QPlainTextEdit QScrollBar::handle:horizontal {
+    background-color: #45475a;
+
+    border-radius: 4px;
+    min-width: 20px;
+}
+
+QPlainTextEdit QScrollBar::handle:horizontal:hover {
+    background-color: #6c7086;
+}
+
+QPlainTextEdit QScrollBar::add-line:horizontal,
+QPlainTextEdit QScrollBar::sub-line:horizontal {
+    width: 0px;
+}
+
+
+/* ---------------------------------------------------------
+   Tooltips
+   --------------------------------------------------------- */
+
+QToolTip {
+    background-color: #181825;
+    color: #cdd6f4;
+
+    border: 1px solid #45475a;
+    padding: 4px;
+}
+
+
+/* ---------------------------------------------------------
+   Selection
+   --------------------------------------------------------- */
+
+QLineEdit {
+    selection-background-color: #b4befe;
+    selection-color: #1e1e2e;
+}
+
+QPlainTextEdit {
+    selection-background-color: #b4befe;
+    selection-color: #1e1e2e;
+}
