@@ -1,0 +1,311 @@
+/* =========================================================
+   Windows 9x Dark Theme
+   ========================================================= */
+
+QWidget {
+    background-color: #202020;
+    color: #e0e0e0;
+
+    font-family: "MS Sans Serif", "Tahoma", sans-serif;
+    font-size: 9pt;
+}
+
+
+/* ---------------------------------------------------------
+   Labels
+   --------------------------------------------------------- */
+
+QLabel {
+    background-color: transparent;
+    color: #e0e0e0;
+}
+
+
+/* ---------------------------------------------------------
+   Menu Bar
+   --------------------------------------------------------- */
+
+QMenuBar {
+    background-color: #202020;
+    color: #e0e0e0;
+
+    border: 0px;
+    border-bottom: 1px solid #101010;
+
+    border-radius: 0px;
+}
+
+QMenuBar::item {
+    background-color: transparent;
+
+    padding: 3px 7px;
+
+    border: 0px;
+    border-radius: 0px;
+}
+
+QMenuBar::item:selected {
+    background-color: #000080;
+    color: #ffffff;
+
+    border-radius: 0px;
+}
+
+QMenuBar::item:pressed {
+    background-color: #000080;
+    color: #ffffff;
+
+    border-radius: 0px;
+}
+
+
+/* ---------------------------------------------------------
+   Menus
+   --------------------------------------------------------- */
+
+QMenu {
+    background-color: #282828;
+    color: #e0e0e0;
+
+    border-top: 2px solid #505050;
+    border-left: 2px solid #505050;
+    border-right: 2px solid #101010;
+    border-bottom: 2px solid #101010;
+
+    border-radius: 0px;
+
+    padding: 2px;
+}
+
+QMenu::item {
+    background-color: transparent;
+
+    padding: 4px 24px 4px 8px;
+
+    border-radius: 0px;
+}
+
+QMenu::item:selected {
+    background-color: #000080;
+    color: #ffffff;
+
+    border-radius: 0px;
+}
+
+QMenu::separator {
+    height: 1px;
+
+    background-color: #505050;
+
+    margin: 3px 2px;
+
+    border-radius: 0px;
+}
+
+
+/* ---------------------------------------------------------
+   Text fields
+   --------------------------------------------------------- */
+
+QLineEdit {
+    background-color: #101010;
+    color: #e0e0e0;
+
+    border-top: 2px solid #101010;
+    border-left: 2px solid #101010;
+    border-right: 2px solid #505050;
+    border-bottom: 2px solid #505050;
+
+    padding: 2px;
+}
+
+QLineEdit:focus {
+    border-top: 2px solid #000080;
+    border-left: 2px solid #000080;
+    border-right: 2px solid #606060;
+    border-bottom: 2px solid #606060;
+}
+
+QLineEdit::selection {
+    background-color: #000080;
+    color: #ffffff;
+}
+
+
+/* ---------------------------------------------------------
+   Buttons
+   --------------------------------------------------------- */
+
+QPushButton {
+    background-color: #303030;
+    color: #e0e0e0;
+
+    border-top: 2px solid #505050;
+    border-left: 2px solid #505050;
+    border-right: 2px solid #101010;
+    border-bottom: 2px solid #101010;
+
+    padding: 3px 10px;
+    min-height: 18px;
+}
+
+
+/* Hover - noticeably lighter */
+
+QPushButton:hover {
+    background-color: #3c3c3c;
+
+    border-top: 2px solid #606060;
+    border-left: 2px solid #606060;
+    border-right: 2px solid #080808;
+    border-bottom: 2px solid #080808;
+}
+
+
+/* Pressed - inverted bevel */
+
+QPushButton:pressed {
+    background-color: #242424;
+
+    border-top: 2px solid #101010;
+    border-left: 2px solid #101010;
+    border-right: 2px solid #505050;
+    border-bottom: 2px solid #505050;
+}
+
+
+/* Keyboard focus */
+
+QPushButton:focus {
+    outline: none;
+}
+
+
+/* ---------------------------------------------------------
+   Start button - Normal
+   --------------------------------------------------------- */
+
+QPushButton#startButton {
+    background-color: #287a28;
+    color: #ffffff;
+
+    font-weight: bold;
+
+    border-top: 2px solid #55a855;
+    border-left: 2px solid #55a855;
+    border-right: 2px solid #102010;
+    border-bottom: 2px solid #102010;
+
+    padding: 3px 12px;
+}
+
+
+/* ---------------------------------------------------------
+   Start button - Running
+   --------------------------------------------------------- */
+
+QPushButton#startButton[state="running"] {
+    background-color: #8a2828;
+    color: #ffffff;
+
+    font-weight: bold;
+
+    border-top: 2px solid #b85555;
+    border-left: 2px solid #b85555;
+    border-right: 2px solid #201010;
+    border-bottom: 2px solid #201010;
+
+    padding: 3px 12px;
+}
+
+
+/* ---------------------------------------------------------
+   Start button - Hover
+   --------------------------------------------------------- */
+
+QPushButton#startButton:hover {
+    background-color: #369436;
+
+    border-top: 2px solid #68bd68;
+    border-left: 2px solid #68bd68;
+    border-right: 2px solid #102010;
+    border-bottom: 2px solid #102010;
+}
+
+QPushButton#startButton[state="running"]:hover {
+    background-color: #a63838;
+
+    border-top: 2px solid #c86868;
+    border-left: 2px solid #c86868;
+    border-right: 2px solid #201010;
+    border-bottom: 2px solid #201010;
+}
+
+
+/* ---------------------------------------------------------
+   Start button - Pressed
+   --------------------------------------------------------- */
+
+QPushButton#startButton:pressed {
+    background-color: #205d20;
+
+    border-top: 2px solid #102010;
+    border-left: 2px solid #102010;
+    border-right: 2px solid #55a855;
+    border-bottom: 2px solid #55a855;
+}
+
+QPushButton#startButton[state="running"]:pressed {
+    background-color: #6e2020;
+
+    border-top: 2px solid #201010;
+    border-left: 2px solid #201010;
+    border-right: 2px solid #b85555;
+    border-bottom: 2px solid #b85555;
+}
+
+
+
+/* ---------------------------------------------------------
+   Progress bar
+   --------------------------------------------------------- */
+
+QProgressBar {
+    background-color: #101010;
+    color: #e0e0e0;
+
+    border-top: 2px solid #101010;
+    border-left: 2px solid #101010;
+    border-right: 2px solid #505050;
+    border-bottom: 2px solid #505050;
+
+    text-align: center;
+    min-height: 18px;
+}
+
+QProgressBar::chunk {
+    background-color: #000080;
+}
+
+
+/* ---------------------------------------------------------
+   Console
+   --------------------------------------------------------- */
+
+QPlainTextEdit {
+    background-color: #080808;
+    color: #c0c0c0;
+
+    border: 2px inset #303030;
+    border-radius: 0px;
+
+    padding: 6px;
+
+    font-family: "Courier New", monospace;
+    font-size: 12px;
+}
+
+QPlainTextEdit::selection {
+    background-color: #000080;
+    color: #ffffff;
+}

@@ -1,5 +1,5 @@
 /* =========================================================
-   Windows 9x inspired theme
+   Windows 9x Light Theme
    ========================================================= */
 
 QWidget {
@@ -29,23 +29,33 @@ QMenuBar {
     background-color: #c0c0c0;
     color: #000000;
 
+    border: 0px;
     border-bottom: 1px solid #808080;
+
+    border-radius: 0px;
 }
 
 QMenuBar::item {
     background-color: transparent;
 
     padding: 3px 7px;
+
+    border: 0px;
+    border-radius: 0px;
 }
 
 QMenuBar::item:selected {
     background-color: #000080;
     color: #ffffff;
+
+    border-radius: 0px;
 }
 
 QMenuBar::item:pressed {
     background-color: #000080;
     color: #ffffff;
+
+    border-radius: 0px;
 }
 
 
@@ -62,6 +72,8 @@ QMenu {
     border-right: 2px solid #404040;
     border-bottom: 2px solid #404040;
 
+    border-radius: 0px;
+
     padding: 2px;
 }
 
@@ -69,11 +81,15 @@ QMenu::item {
     background-color: transparent;
 
     padding: 4px 24px 4px 8px;
+
+    border-radius: 0px;
 }
 
 QMenu::item:selected {
     background-color: #000080;
     color: #ffffff;
+
+    border-radius: 0px;
 }
 
 QMenu::separator {
@@ -82,6 +98,8 @@ QMenu::separator {
     background-color: #808080;
 
     margin: 3px 2px;
+
+    border-radius: 0px;
 }
 
 
@@ -164,10 +182,10 @@ QPushButton:focus {
 
 
 /* ---------------------------------------------------------
-   Start button
+   Start button - Enabled / Ready
    --------------------------------------------------------- */
 
-QPushButton#startButton {
+QPushButton#startButton:enabled {
     background-color: #90ee90;
     color: #000000;
 
@@ -184,7 +202,7 @@ QPushButton#startButton {
 
 /* Start hover */
 
-QPushButton#startButton:hover {
+QPushButton#startButton:enabled:hover {
     background-color: #b0f5b0;
 
     border-top: 2px solid #ffffff;
@@ -196,13 +214,32 @@ QPushButton#startButton:hover {
 
 /* Start pressed */
 
-QPushButton#startButton:pressed {
+QPushButton#startButton:enabled:pressed {
     background-color: #70c870;
 
     border-top: 2px solid #404040;
     border-left: 2px solid #404040;
     border-right: 2px solid #ffffff;
     border-bottom: 2px solid #ffffff;
+}
+
+
+/* ---------------------------------------------------------
+   Start button - Disabled / Running
+   --------------------------------------------------------- */
+
+QPushButton#startButton:disabled {
+    background-color: #8a2828;
+    color: #ffffff;
+
+    font-weight: bold;
+
+    border-top: 2px solid #b85555;
+    border-left: 2px solid #b85555;
+    border-right: 2px solid #201010;
+    border-bottom: 2px solid #201010;
+
+    padding: 3px 12px;
 }
 
 
@@ -248,85 +285,4 @@ QPlainTextEdit {
 QPlainTextEdit::selection {
     background-color: #000080;
     color: #ffffff;
-}
-
-/* ---------------------------------------------------------
-   Menu Bar
-   --------------------------------------------------------- */
-
-QMenuBar {
-    background-color: #c0c0c0;
-    color: #000000;
-
-    border: 0px;
-    border-bottom: 1px solid #808080;
-
-    border-radius: 0px;
-}
-
-QMenuBar::item {
-    background-color: transparent;
-
-    padding: 3px 7px;
-
-    border: 0px;
-    border-radius: 0px;
-}
-
-QMenuBar::item:selected {
-    background-color: #000080;
-    color: #ffffff;
-
-    border-radius: 0px;
-}
-
-QMenuBar::item:pressed {
-    background-color: #000080;
-    color: #ffffff;
-
-    border-radius: 0px;
-}
-
-
-/* ---------------------------------------------------------
-   Menus
-   --------------------------------------------------------- */
-
-QMenu {
-    background-color: #c0c0c0;
-    color: #000000;
-
-    border-top: 2px solid #ffffff;
-    border-left: 2px solid #ffffff;
-    border-right: 2px solid #404040;
-    border-bottom: 2px solid #404040;
-
-    border-radius: 0px;
-
-    padding: 2px;
-}
-
-QMenu::item {
-    background-color: transparent;
-
-    padding: 4px 24px 4px 8px;
-
-    border-radius: 0px;
-}
-
-QMenu::item:selected {
-    background-color: #000080;
-    color: #ffffff;
-
-    border-radius: 0px;
-}
-
-QMenu::separator {
-    height: 1px;
-
-    background-color: #808080;
-
-    margin: 3px 2px;
-
-    border-radius: 0px;
 }
