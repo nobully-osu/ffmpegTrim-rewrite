@@ -1,49 +1,70 @@
+version = "v1.1.0"
 import os, subprocess
 from configparser import ConfigParser
 from pathlib import Path
 
 
 def main() -> None:
-    script_path = os.path.dirname(os.path.realpath(__file__))
-    os.chdir(script_path)
+    config_path = Path(__file__).parent / "config.ini"
 
-    if not os.path.exists("config.ini"):
+    if not config_path.is_file():
         print("Running first time setup...\n")
         setup()
 
     config = ConfigParser()
     config.read("config.ini")
 
-    audio_codec = config.get("main", "audio")
-    video_codec = config.get("main", "video")
-    preset = config.get("main", "preset")
-    file_extension = config.get("main", "extension")
+    audio_codec     = config.get("audio", "codec")
+    audio_quality   = config.get("audio", "quality")
+    video_codec     = config.get("video", "codec")
+    video_quality   = config.get("video", "quality")
+    cpu_preset      = config.get("video", "preset")
+    file_extension  = config.get("video", "extension")
 
-    print("ffmpegTrim-rewrite v1.0.2")
+    print(f"ffmpegTrim-rewrite {version}")
 
-    input_path = input("Path to video (or drag and drop): ")
+    input_path = input("Path to video (or drag and drop): ").strip().strip('\"\'')
     start_time = input("Start time of clip (hh:mm:ss, mm:ss): ")
     end_time = input("End time of clip (hh:mm:ss, mm:ss): ")
 
-    input_path = input_path.strip('\"\'')
-    temp_path, _ = input_path.strip('\"\'').split(".", 1)
+    temp_path = Path(input_path)
 
-    output_path = get_output_path(temp_path, file_extension)
+    output_path = get_output_path(str(temp_path.with_suffix("")), file_extension)
 
     start_time_seconds = parse_timecode(start_time)
     end_time_seconds = parse_timecode(end_time)
     duration = end_time_seconds - start_time_seconds
 
-    subprocess.run([
-        "ffmpeg",
+    video_args = (
+        ["-c:v", "copy"]
+        if video_codec == "copy"
+        else ["-c:v", video_codec, "-preset", cpu_preset, "-crf", video_quality]
+    )
+
+    audio_args = (
+        ["-c:a", "copy"]
+        if audio_codec == "copy"
+        else ["-c:a", audio_codec, "-b:a", audio_quality]
+    )
+
+    container_args = (
+        ["-movflags", "+faststart"]
+        if file_extension.lower() in ("mp4", "mov", "m4a")
+        else []
+    )
+
+    args = [
+        "-i", str(input_path),
         "-ss", start_time,
-        "-i", input_path,
-        "-ss", "0",
         "-t", str(duration),
-        "-c:v", video_codec,
-        "-preset", preset,
-        "-c:a", audio_codec,
+        *video_args,
+        *audio_args,
+        *container_args,
         output_path
+    ]
+
+    subprocess.run([
+        "ffmpeg", *args
     ])
 
     return
@@ -63,14 +84,22 @@ def setup():
 
     print("Generating configuration file...")
     config = ConfigParser()
+    config["audio"] = {
+        "codec": "copy",
+        "quality": "320k",
+    }
 
-    config.read("config.ini")
-    config.add_section("main")
-    config.set("main", "audio", "copy")
-    config.set("main", "video", "libx264")
-    config.set("main", "preset", "medium")
-    config.set("main", "extension", "mp4")
-    config.set("main", "default-path", str(Path.home() / "Videos"))
+    config["video"] = {
+        "codec": "libx264",
+        "quality": "23",
+        "preset": "medium",
+        "extension": "mp4",
+    }
+
+    config["qt"] = {
+        "default-path": str(Path.home() / "Videos"),
+        "default-theme": "win9x-dark",
+    }
 
     with open("config.ini", "w") as f:
         config.write(f)
@@ -91,6 +120,7 @@ def parse_timecode(tc):
             return parts[0]*3600 + parts[1]*60 + parts[2]
         else:
             raise ValueError("Invalid timecode format.")
+
 
 if __name__ == "__main__":
     main()
