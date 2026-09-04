@@ -1,4 +1,4 @@
-version = "v1.1.0"
+version = "v1.1.1"
 import os, subprocess
 from configparser import ConfigParser
 from pathlib import Path
@@ -76,6 +76,20 @@ def get_output_path(temp_path: str, file_extension: str) -> str:
     ): i += 1
     return output_path
 
+def parse_timecode(tc):
+    if "." in tc:
+        whole, ms = tc.split(".")
+        seconds = parse_timecode(whole)
+        return seconds + float("0." + str(ms))
+    else:
+        parts = list(map(int, tc.split(":")))
+        if len(parts) == 2:
+            return parts[0]*60 + parts[1]
+        elif len(parts) == 3:
+            return parts[0]*3600 + parts[1]*60 + parts[2]
+        else:
+            raise ValueError("Invalid timecode format.")
+
 def setup():
     print("Installing ffmpeg via winget...\n")
     subprocess.run(["winget", "install", "Gyan.FFmpeg"])
@@ -106,20 +120,6 @@ def setup():
 
     print("Done!\n")
     return
-
-def parse_timecode(tc):
-    if "." in tc:
-        whole, ms = tc.split(".")
-        seconds = parse_timecode(whole)
-        return seconds + float("0." + str(ms))
-    else:
-        parts = list(map(int, tc.split(":")))
-        if len(parts) == 2:
-            return parts[0]*60 + parts[1]
-        elif len(parts) == 3:
-            return parts[0]*3600 + parts[1]*60 + parts[2]
-        else:
-            raise ValueError("Invalid timecode format.")
 
 
 if __name__ == "__main__":
